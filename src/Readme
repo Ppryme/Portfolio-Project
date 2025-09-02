@@ -1,0 +1,63 @@
+README – Portfolio Design System
+
+Here’s a style guide you can put in your README.md to document the colors and fonts used.
+
+🎨 Colors
+
+Primary Indigo: #4F46E5 (Tailwind indigo-600)
+
+Primary Purple: #8B5CF6 (Tailwind purple-500)
+
+Gray (Body Text): #4B5563 (Tailwind gray-600)
+
+Dark Gray (Headings): #111827 (Tailwind gray-900)
+
+Background White: #FFFFFF
+
+✍️ Fonts
+
+Font Family: Inter, sans-serif (fallback to system-ui)
+
+Headings:
+
+Size: text-4xl (Hero), text-2xl (section titles), text-lg (card titles)
+
+Weight: font-bold or font-semibold
+
+Body Text:
+
+Size: text-base or text-sm
+
+Color: text-gray-600
+
+Weight: font-normal
+
+📐 Layout
+
+Max Width Container: max-w-6xl mx-auto
+
+Padding: px-4 sm:px-6 lg:px-8
+
+Sections: py-16 spacing
+
+Cards: bg-white shadow rounded-lg hover:shadow-lg transition
+
+🔘 Buttons
+
+Primary Button:
+
+Background: Indigo or Purple (bg-indigo-500 hover:bg-indigo-600)
+
+Text: White (text-white font-medium text-sm)
+
+Shape: rounded-lg
+
+Padding: px-6 py-3
+
+Secondary Button (CV Download):
+
+Background: Light Gray (bg-gray-100 hover:bg-gray-200)
+
+Text: text-gray-800
+
+Shape: rounded-lg
