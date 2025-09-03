@@ -5,6 +5,7 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 function Navbar() {
+const  [hireMePopup, setIsHireMePopup] = useState(false)
 const  [open, setOpen] = useState(false);
   
 return (
@@ -23,18 +24,67 @@ return (
     </div>
 
     <div className="flex   items-center    space-x-1.5">
-      <button className=" hidden md:block py-1.5 px-1.5  font-sans bg-indigo-500 font-bold text-white md:py-3 md:px-4 rounded-md hover:bg-indigo-600 ">Hire Me</button>
-     <button className="ml-2.5   text-gray-400 p-0.5 md:p-2 bg-gray-100 rounded   "><LightModeIcon/></button> 
+      <button onClick={() => setIsHireMePopup(!hireMePopup)} className=" hidden md:block py-1.5 px-1.5  font-sans bg-indigo-500 font-bold text-white md:py-3 md:px-4 rounded-md hover:bg-indigo-600 ">Hire Me</button>
+     <button className="ml-2.5   text-gray-400 p-0.5 md:p-2 bg-gray-50 rounded   "><LightModeIcon/></button> 
      {/* Mobile Menu Icon */}
         <button
-          onClick={() => setOpen(!open)}
+          onClick={() => setOpen((opened)=> !opened)}
           className="md:hidden text-gray-800 focus:outline-none"
         >
          <MenuIcon size={28} />
         </button>
     </div>
 
+     {/* Hire me Popup*/}
 
+     <div className={`h-full w-100  fixed left-0 right-0 bottom-0 mx-auto  bg-white shadow-lg 
+      ${hireMePopup ?  "translate-y-0" : "translate-y-full"} transition-transorm duration-300 ease-in-out`}>
+
+      <div className="flex  text-left pt-8 pl-4 pr-4 items-center gap-4 justify-between">
+      <p className="text-gray-800 font-medium text-lg ">What Project Are you Looking for?</p>
+       <span><button onClick={()=> setIsHireMePopup (!hireMePopup)}><CloseIcon/></button></span>
+      </div>
+
+      <div id="contact-inputs" className="flex flex-col gap-8 pt-4 px-4 items-start ">
+         {/* Name Input */}
+      <input
+        type="text"
+        placeholder="Name"
+        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+      />
+
+      {/* Email Input */}
+      <input
+        type="email"
+        placeholder="Email"
+        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+      />
+
+      {/* Dropdown */}
+      <select
+        className="w-full text-gray-800 font-bold  px-4 py-2  border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+      >
+      <option>Web Application</option>
+      <option>Mobile Application</option>
+      <option>UI/UX Design</option>
+      <option>Other</option>
+      </select>
+
+      {/* Textarea */}
+      <textarea
+        placeholder="Project description"
+        rows="4"
+        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+      ></textarea>
+
+      <span>
+        <button className="text-bold text-white bg-indigo-500 py-3 px-4 rounded-md hover:bg-indigo-600  ">Send Request</button>
+      </span>
+      
+      </div>
+      <span className="absolute bottom-6 right-4"><button onClick={()=> setIsHireMePopup (!hireMePopup)} className=" text-bold font-sans text-white bg-gray-800 py-3 px-4 rounded-md hover:bg-gray-600">Close</button></span> 
+      </div> 
+      
 
      
 
@@ -57,9 +107,9 @@ return (
         
       </nav>
 
-      <div> <button className=" py-1.5 px-1.5  font-sans bg-indigo-500 font-bold text-white md:py-3 md:px-4 rounded-md hover:bg-indigo-600 ">Hire Me</button></div>
+      <div> <button onClick={()=> setIsHireMePopup (!hireMePopup)} className=" py-1.5 px-1.5  font-sans bg-indigo-500 font-bold text-white md:py-3 md:px-4 rounded-md hover:bg-indigo-600 ">Hire Me</button></div>
 
-      npm
+
      </div>
 
 

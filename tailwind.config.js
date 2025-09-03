@@ -2,7 +2,7 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}", // Make sure it scans your React files
+    "{./src/App.jsx}", // Make sure it scans your React files
   ],
   theme: {
     extend: {
