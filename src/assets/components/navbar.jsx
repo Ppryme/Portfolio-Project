@@ -107,7 +107,10 @@ return (
         
       </nav>
 
-      <div> <button onClick={()=> setIsHireMePopup (!hireMePopup)} className=" py-1.5 px-1.5  font-sans bg-indigo-500 font-bold text-white md:py-3 md:px-4 rounded-md hover:bg-indigo-600 ">Hire Me</button></div>
+      <div> <button onClick={()=> setIsHireMePopup (!hireMePopup)} 
+                      className=" py-1.5 px-1.5  font-sans bg-indigo-500 font-bold text-white md:py-3 md:px-4 rounded-md hover:bg-indigo-600 ">
+                      Hire Me</button>
+      </div>
 
 
      </div>

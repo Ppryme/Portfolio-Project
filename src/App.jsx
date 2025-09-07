@@ -1,6 +1,7 @@
 import './App.css'
 import Navbar from './assets/components/navbar'
 import Hero from './assets/components/hero'
+import Project from './assets/components/project'
 
 
 
@@ -14,6 +15,10 @@ function App() {
 
     <section id = 'hero'>
      <Hero></Hero>
+    </section>
+
+     <section id = 'Project'>
+     <Project></Project>
     </section>
 
    </div>
