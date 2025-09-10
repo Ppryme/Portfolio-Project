@@ -5,7 +5,7 @@ import { Projectprops} from '../script/props';
 
 function Project () {
   return  (
-        <section id="project-section" className="max-w-6xl flex flex-col gap-6 ">
+        <section id="project-section" className="max-w-6xl flex flex-col gap-6  border-b border-b-gray-200 ">
             <h2 className="text-gray-800 text-2xl sm:text-4xl text-center font-semibold mx-auto">Project Portfolio</h2>
             <p className="text-gray-700 font-normal sm:text-xl text-md">Search Project by Category</p>
 
@@ -20,17 +20,24 @@ function Project () {
                         <option>Web Application</option>
                         <option>Mobile Application</option>
                         <option>UI/UX Design</option>
-                        <option>Other</option>
+                       
                         
                     </select>
               
                 </div>
             </div>
 
-            <div id='project-gallery' className= " grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 mt-6 sm:gap-10">
+            <div id='project-gallery' className=" p-2 border-t border-t-gray-200 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  mt-6 gap-7 sm:gap-10">
               {Projectprops.map( (projects, index) =>  <ProjectCard key= {index} {...projects}/> )} 
-                
+
+             
             </div>
+
+             <div className=' mx-auto mt-8 mb-18 '>
+                <button className="text-bold text-white text-xl bg-indigo-500 py-4 px-10 rounded-md hover:bg-indigo-600 ">More Projects</button>
+            </div>
+
+            
 
         </section>
     )
