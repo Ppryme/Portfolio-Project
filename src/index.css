@@ -1,7 +1,46 @@
 @import "tailwindcss";
+@layer components {
+  .btn {
+    @apply transition duration-500 ease-in-out px-6 py-4 rounded-lg bg-indigo-500 text-white hover:bg-indigo-600;
+  }
+ 
+  
 
-* {
-  @apply transition duration-600 ease-in-out;
+@layer base {
+  /* Light Theme (default) */
+  .theme-light {
+    @apply bg-white text-gray-800;
+  }
+
+  /* Dark Theme */
+  .theme-dark {
+    @apply bg-[#0D2438] text-white;
+  }
+
+  /* Containers (like sections, cards, navbar, footer) */
+  .theme-light .section {
+    @apply bg-gray-50 text-gray-800;
+  }
+  .theme-dark .section {
+    @apply bg-[#102D44] text-white;
+  }
+
+  .theme-light .card {
+    @apply bg-white text-gray-800;
+  }
+  .theme-dark .card {
+    @apply bg-[#1A374D] text-gray-100;
+  }
+
+  .bg-light{
+    @apply bg-[#0a2e54]
+  }
 }
 
+}
+
+html, body {
+  overflow-x: hidden;
+
+}
 

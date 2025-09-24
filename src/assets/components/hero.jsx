@@ -1,31 +1,69 @@
-
-import hero from  '../Images/Hero.jpg'
+import { motion } from "framer-motion";
+import hero from  '../Images/developer.svg'
 
 function Hero () {
 return (
- <section id="Hero" className="  max-w-6xl mx-auto flex gap-2 flex-col sm:flex-row    md:flex-row items-center sm:w-full sm:h-full ">
-     <div id="hero-text" className=" flex-1  flex-col sm:text-left   md:place-items-start space-y-9 md:space-y-6 items-center text-center   justify-between   ">
-      
-       <h1 className="text-gray-700  text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold md:text-left   leading-snug max-w-xl">
-          Hi, I am Famuyiwa Peter
-        </h1>
+<section
+  id="Hero"
+  className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:mt-8 mt-16 items-center sm:w-full sm:h-full gap-6"
+>
+ 
 
-       <p className="text-base  sm:text-lg md:text-xl lg:text-2xl text-gray-600 font-medium md:text-left leading-relaxed max-w-xl">
-          A Full-Stack Developer & Design Enthusiast
-        </p>
+  {/* Text Section */}
 
-       <a 
-        href="/cv.pdf" 
-        download="Famuyiwa_Peter_CV.pdf" 
-         className="bg-indigo-50 text-gray-500 font-medium   hover:text-white px-6 py-3 rounded-md hover:bg-indigo-600 shadow-sm border border-gray-200 ">
-        Download CV
-        </a>
-     </div>
+  <motion.div
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					transition={{
+						ease: 'easeInOut',
+						duration: 0.9,
+						delay: 0.1,
+					}}
+					 className="sm:flex-1 flex-[1.1] flex flex-col sm:items-start max-w-lg sm:text-left md:place-items-start space-y-8 items-center text-center justify-between "
+				>
+  < >
+    <h1 className="text-xl sm:text-xl md:text-2xl lg:text-4xl xl:text-4xl font-bold leading-snug ">
+      Hi, I am Famuyiwa Peter
+    </h1>
 
-     <div id="hero-img" className=" flex-1 justify-center  ">
-        <img src= {hero} alt="Illustration" className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto   mt-4 md:mt-0 sm:py-0" />
-     </div>
-    </section>
+  
+
+    <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium leading-relaxed">
+      A Full-Stack Developer & Design Enthusiast
+    </p>
+
+    <a 
+      href="/cv.pdf"
+      download="Famuyiwa_Peter_CV.pdf"
+      className="bg-indigo-50 theme-light font-medium hover:text-white px-6 py-3 rounded-md hover:bg-indigo-600 duration-300 shadow-sm border border-gray-200"
+    >
+      Download CV
+    </a>
+  </>
+
+  </motion.div>
+
+ 
+
+  {/* Image Section */}
+  <motion.div
+				initial={{ opacity: 0, y: -180 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
+				className=" sm:flex-[1.2] flex-1  justify-center"
+			>
+   <div id="hero-img" >
+    <img
+      src={hero}
+      alt="Illustration"
+      className=" w-full   "
+    />
+  </div>
+
+</motion.div>
+
+</section>
+
  
 
 
