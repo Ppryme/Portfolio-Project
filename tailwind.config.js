@@ -1,10 +1,11 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  darkMode: "class", // 👈 enables manual dark mode using the 'dark' class
- 
+const colors = require('tailwindcss/colors');
+
+module.exports = {
+  darkMode: 'class', // 👈 enables dark mode with the "dark" class
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
@@ -12,13 +13,20 @@ export default {
         poppins: ['Poppins', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
       },
-      colors: {
-        secondary: {
-          light: "#FFFFFF",
-          dark: "#102D44", // your dark background
+      
+      container: {
+        padding: {
+          DEFAULT: '1rem',
+          sm: '2rem',
+          lg: '5rem',
+          xl: '6rem',
+          '2xl': '8rem',
         },
       },
     },
   },
-  plugins: [],
-}
+  
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
+};

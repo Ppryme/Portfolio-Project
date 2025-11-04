@@ -1,15 +1,36 @@
+html, body, #root {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  
+
+}
+
+
 @import "tailwindcss";
 @layer components {
+ .nav-link {
+    /* Let parent control the base text color */
+    @apply hover:text-indigo-500 ;
+  }
+
   .btn {
     @apply transition duration-500 ease-in-out px-6 py-4 rounded-lg bg-indigo-500 text-white hover:bg-indigo-600;
   }
  
+.text-large{
+  @apply font-bold text-white text-3xl 
+}
   
 
 @layer base {
   /* Light Theme (default) */
   .theme-light {
     @apply bg-white text-gray-800;
+  }
+
+  .color-red{
+    @apply bg-red-900
   }
 
   /* Dark Theme */
@@ -35,12 +56,11 @@
   .bg-light{
     @apply bg-[#0a2e54]
   }
+
+  
 }
 
 }
 
-html, body {
-  overflow-x: hidden;
 
-}
 

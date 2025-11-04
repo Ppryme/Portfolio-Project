@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
 import hero from  '../Images/developer.svg'
-
+import DownloadForOfflineOutlinedIcon from '@mui/icons-material/DownloadForOfflineOutlined';
 function Hero () {
 return (
 <section
   id="Hero"
-  className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:mt-8 mt-16 items-center sm:w-full sm:h-full gap-6"
+  className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:mt-8 mt-12 items-center sm:w-full sm:h-full gap-6 sm:px-6 py-10 px-4"
 >
+
+  
  
 
   {/* Text Section */}
@@ -33,10 +35,11 @@ return (
     </p>
 
     <a 
-      href="/cv.pdf"
+      href="/src/assets/public/CV.pdf"
       download="Famuyiwa_Peter_CV.pdf"
       className="bg-indigo-50 theme-light font-medium hover:text-white px-6 py-3 rounded-md hover:bg-indigo-600 duration-300 shadow-sm border border-gray-200"
     >
+      <span  className="mr-1.5"><DownloadForOfflineOutlinedIcon/></span>
       Download CV
     </a>
   </>
@@ -56,7 +59,7 @@ return (
     <img
       src={hero}
       alt="Illustration"
-      className=" w-full   "
+      className=" w-full"
     />
   </div>
 

@@ -1,8 +1,9 @@
-import PCCSR from '../Images/pccsr.png'
+import PCCSR from '../Images/pccsr latest.png'
 import Consultancypage from '../Images/consultancy page.png'
-import Dashboard from '../Images/Dashboard Design (Design Guide).jpg'
-import mobileApp from '../Images/mobileapp.png'
+import TimerGame from '../Images/brands/FireShot Capture 002 - Refs & Portals - [localhost].png'
+import mobileApp from '../Images/E-commerce Mobile Application Design for Free (Community).png'
 import foodWeb from '../Images/Restaurant Application.png'
+import mobileproj from '../Images/mobile-project-1.jpg'
 
 
 
@@ -12,7 +13,11 @@ export  const Projectprops = [
     title: "Person Centered Care staffing and Recruitment",
     category: "Web Application",
     image: PCCSR,
-    link:  "https://react-tailwindcss-portfolio.netlify.app/"
+    link:  "https://react-tailwindcss-portfolio.netlify.app/",
+    extra: true,
+     slug: "project-management-ui",
+
+    
   },
   {
     id: 2,
@@ -26,25 +31,27 @@ export  const Projectprops = [
     title: "E-commerce mobile Application ",
     category: "Mobile Application",
     image: mobileApp,
-    link:  ""
+    link:  "",
+     extra: true,
+      slug: "e-commerce-mobile-application",
   }, 
   {
     id: 4,
-    title: "TradeX ",
+    title: "React Timer Game ",
     category: "Web Application",
-    image: Dashboard,
+    image: TimerGame,
     link:  ""
   }, 
   {
     id: 5,
-    title: "Restaurant Application ",
+    title: "React Social Application ",
     category: "Mobile Application",
-    image: foodWeb,
+    image: mobileproj,
     link:  ""
   }, 
   {
     id: 6,
-    title: "consultancy agency Landing ",
+    title: "consultancy agency Landing Page ",
     category: "UI/UX Design",
     image: PCCSR,
     link:  ""

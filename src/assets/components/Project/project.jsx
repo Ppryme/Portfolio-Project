@@ -1,16 +1,30 @@
 import { useState } from "react";
 import SearchIcon from '@mui/icons-material/Search';
-import ProjectCard from './project-card';
-import { Projectprops} from '../script/props';
-import { AnimatePresence } from "framer-motion";
-import { DarkMode } from "@mui/icons-material";
+import ProjectGrid from "./Project-grid";
+import { Link } from "react-router-dom";
+import { motion, AnimatePresence} from "framer-motion";
+
 
 
 function Project ({darkMode}) {
     const [selectedCategory, setSelectedCategory] = useState("All Projects");
     const [searchQuery, setSearchQuery] = useState(""); 
   return  (
-        <section id="project-section" className="mt-20  max-w-6xl flex flex-col gap-6  border-b border-b-gray-200  ">
+        <motion.section 
+        id="projects" 
+        className="pt-35  max-w-6xl flex flex-col gap-6  border-b border-b-gray-200   "
+        
+        	initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					transition={{
+						ease: 'easeInOut',
+						duration: 0.9,
+						delay: 0.2,
+					}}
+
+        >
+
+
             <h2 className=" text-2xl sm:text-4xl text-center font-semibold mx-auto">Project Portfolio</h2>
             <p className=" font-md sm:text-xl text-md">Search Project by Title or Filter  by  Category</p>
 
@@ -28,8 +42,8 @@ function Project ({darkMode}) {
                     <select 
                         value={selectedCategory}
                         onChange={(e) => setSelectedCategory(e.target.value)}
-                         className=' flex-1 w-full p-2 green  border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500' > All Projects
-                            <option>All Projects</option>
+                         className={`${darkMode ? "dark:bg-[#102D44] border border-gray-200 p-2 rounded-md" :"flex-1 w-full p-2 green  border  border-gray-200  rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500" }` } > All Projects
+                            <option >All Projects</option>
                             <option>Web Application</option>
                             <option>Mobile Application</option>
                         <   option>UI/UX Design</option>
@@ -40,40 +54,12 @@ function Project ({darkMode}) {
                 </div>
             </div>
 
+            <ProjectGrid selectedCategory= {selectedCategory} setSelectedCategory= {setSelectedCategory} 
+            searchQuery= {searchQuery} setSearchQuery = {setSearchQuery} darkMode= {darkMode} />
 
-<div
-  id="project-gallery"
-  className="p-2 border-t border-t-gray-200 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 gap-8  sm:gap-10">
+            <span className="mx-auto mb-16 mt-4"><Link to= "/project-page" className="btn text-xl font-medium mt-6">More Project</Link></span>
 
-{/* Fileter byy search or category */}
-{Projectprops
-          .filter((project) => {
-            // Category filter
-            const matchesCategory =
-              selectedCategory === "All Projects" ||
-              project.category === selectedCategory;
-
-            // Search filter
-            const matchesSearch = project.title
-              .toLowerCase()
-              .includes(searchQuery.toLowerCase());
-
-            return matchesCategory && matchesSearch;
-          })
-          .map((project, index) => (
-            <ProjectCard darkMode={darkMode}
-              key={`${project.category}-${index}`}
-              {...project}
-            />
-          ))}
-</div>
-
-<span className="mx-auto mb-16 mt-4"><button className="btn text-xl font-medium mt-6">More Project</button></span>
-
-
-            
-
- </section>
+ </motion.section>
     )
 }
 

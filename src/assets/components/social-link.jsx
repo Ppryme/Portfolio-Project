@@ -39,14 +39,14 @@ const Links = [
  export default function SocialLink ({darkMode}) {
   return  (
        <>
-        <div className=" mt-12  flex flex-wrap items-center justify-center w-full gap-6 ">
+        <div className={` ${darkMode && "dark"} mt-12  flex flex-wrap items-center justify-center w-full gap-6 `}>
         
           { Links.map ((link) =>  
           <a href={link.url} 
             key={link.id} 
             target='__blank'
-            className={`bg-gray-50 text-gray-600   rounded-lg
-             hover:bg-gray-100 shadow-sm   sm:p-4 p-2 md:p-6  none text-center ${darkMode && " dark dark:bg-[#163B63]  dark:text-gray-400 hover:text-indigo-500 "}`} >
+            className={`  ${darkMode && " dark dark:bg-[#163B63]  dark:text-gray-400 dark:hover:text-indigo-200 dark:hover:bg-[#244669] "} bg-gray-50 text-gray-500 hover:text-indigo-500  rounded-lg
+             hover:bg-gray-100 shadow-sm   sm:p-4 p-2 md:p-6  none text-center mb-2 `} >
                
 				   {<link.icon  />} 
 			    
@@ -57,13 +57,13 @@ const Links = [
 
             </div>
 
-            <div className=' text-[18px] sm:text-xl mt-16 w-full'>
+            <div className=' text-[18px] sm:text-xl sm:mt-12 mt-0 w-full mb-4 sm:text-nowrap text-wrap p-4 font-light  '>
             &copy; {new Date().getFullYear()}
 
             <a
 					href="https://stoman.me"
 					target="__blank"
-					className="  uppercase hover:underline hover:text-indigo-600 dark:hover:text-indigo-300 ml-1 duration-500"
+					className="  uppercase hover:underline   hover:text-indigo-600 ml-1 duration-500"
 				>
 					 Famuyiwa Peter
 				</a>
@@ -72,7 +72,7 @@ const Links = [
 
             <a href="https://stoman.me"
 					target="__blank"
-					className=" hover:underline hover:text-indigo-600  ml-1 duration-500"
+					className=" hover:underline hover:text-indigo-600 sm:inline-block  block ml-1 duration-500"
 
             >
             React Portfolio
