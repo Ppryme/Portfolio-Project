@@ -26,13 +26,13 @@ const Links = [
      {
           id : 4,
         icon : LinkedInIcon,
-        url : "https://github.com/Ppryme/Portfolio-Project"
+        url : "https://www.linkedin.com/in/peter-famuyiwa-501aa3238?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
      },
 
      {
          id : 5,
         icon : YouTubeIcon,
-        url : "https://github.com/Ppryme/Portfolio-Project"
+        url : "https://www.youtube.com/@peterfamuyiwa622"
      },
 ];
 
@@ -61,7 +61,7 @@ const Links = [
             &copy; {new Date().getFullYear()}
 
             <a
-					href="https://stoman.me"
+					href="https://www.linkedin.com/in/peter-famuyiwa-501aa3238?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
 					target="__blank"
 					className="  uppercase hover:underline   hover:text-indigo-600 ml-1 duration-500"
 				>
@@ -70,7 +70,7 @@ const Links = [
             .
 
 
-            <a href="https://stoman.me"
+            <a href="https://github.com/Ppryme/Portfolio-Project"
 					target="__blank"
 					className=" hover:underline hover:text-indigo-600 sm:inline-block  block ml-1 duration-500"
 
