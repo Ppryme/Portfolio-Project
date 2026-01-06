@@ -1,3 +1,4 @@
+
 import FloatingInputb from "../components/FloatingInputb"
 export default function ContactPage () {
     return(
@@ -15,9 +16,10 @@ export default function ContactPage () {
             
               <input hidden name="ContactForm" type="text"  />
               <FloatingInputb
-                label="Full name"
+                label="name"
                 name="Fullname"
                 type="text"
+                id = "name"
                 />
                 
                 
@@ -26,6 +28,7 @@ export default function ContactPage () {
                 label="Email Address"
                 name="email"
                 type="email"
+                id = "email"
                  />
                
                 
@@ -35,6 +38,7 @@ export default function ContactPage () {
               label="Phone no"
               name="Phonenumber"
               type="number"
+               id = "phone no"
               
               
              
@@ -44,6 +48,7 @@ export default function ContactPage () {
               placeholder="Enter message"
               name="message"
               className="bg-transparent border-b border-b-dark/30 h-24 text-sm placeholder:text-sm  focus:border-b-lightblue focus:outline-none text-dark"
+              label = "subject"
              
              
               

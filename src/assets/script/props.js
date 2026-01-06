@@ -13,7 +13,7 @@ export  const Projectprops = [
     title: "Person Centered Care staffing and Recruitment",
     category: "Web Application",
     image: PCCSR,
-    link:  "https://react-tailwindcss-portfolio.netlify.app/",
+    link:  "https://www.pccsr.co.uk/",
     extra: true,
      slug: "project-management-ui",
 
@@ -24,14 +24,14 @@ export  const Projectprops = [
     title: "Consultancy Agency Landing Page",
     category: "UI/UX",
     image: Consultancypage,
-    link:  ""
+   
   },
   {
     id: 3,
     title: "E-commerce mobile Application ",
     category: "Mobile Application",
     image: mobileApp,
-    link:  "",
+  
      extra: true,
       slug: "e-commerce-mobile-application",
   }, 
@@ -40,21 +40,21 @@ export  const Projectprops = [
     title: "React Timer Game ",
     category: "Web Application",
     image: TimerGame,
-    link:  ""
+  
   }, 
   {
     id: 5,
     title: "React Social Application ",
     category: "Mobile Application",
     image: mobileproj,
-    link:  ""
+   
   }, 
   {
     id: 6,
     title: "consultancy agency Landing Page ",
     category: "UI/UX Design",
     image: PCCSR,
-    link:  ""
+   
   }, ]
 
 

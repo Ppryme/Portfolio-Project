@@ -14,7 +14,7 @@ const Links = [
      {
          id : 2,
         icon : FacebookIcon,
-        url : "https://github.com/Ppryme/Portfolio-Project"
+        url : "https://www.facebook.com/peter.famiyiwa"
      },
 
      {

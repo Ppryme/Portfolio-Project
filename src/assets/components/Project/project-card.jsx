@@ -24,7 +24,9 @@ export default function ProjectCard({ slug, title, category, image, link, darkMo
             <span className="text-left mt-3 flex flex-row justify-between">
               <a
                 href={link}
-                className={`${darkMode ? "bg-[#1e3851] text-white font-medium" : "bg-indigo-400 text-white font-medium"} px-3 py-3 rounded-lg shadow-2xl`}
+                 target="_blank"
+                 rel="noopener noreferrer"
+                className={`${darkMode ? "bg-[#1e3851] text-white font-medium" : "bg-indigo-400 text-white font-medium"} cursor-pointer px-3 py-3 rounded-lg shadow-2xl`}
               >
                 View Website
               </a>
