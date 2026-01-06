@@ -10,7 +10,7 @@ export default function ContactPage () {
     id="contact-form" 
     className={`${darkMode ? "bg-[#0a2e54] text-white" : "bg-white text-gray-800"} p-6 rounded-lg shadow-md max-w-[34rem] min-h-svh`}
   >
-    <h3 className="text-xl font-bold mb-4">Contact Formjddddddddd</h3>
+    <h3 className="text-xl font-bold mb-4">Contact Form</h3>
 
     <form className="flex flex-col gap-12" >
             
