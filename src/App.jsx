@@ -22,6 +22,8 @@ const Hero = lazy(() => import("./assets/components/hero"));
 
 function App() {
   const [open, setOpen] = useState(false);
+
+  
  const [darkMode, setIsDarkMode] = useState(() => {
     const saved = localStorage.getItem("darkMode");
     return saved ? JSON.parse(saved) : false;
