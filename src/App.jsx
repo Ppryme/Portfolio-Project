@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ScrollToTopButton from "./assets/components/shared/useScroll";
 import { lazy, Suspense } from 'react';
-import "./App.css";
+import "./app.css";
 import Navbar from "./assets/components/navbar/navbar";
 import Project from "./assets/components/Project/project";
 import Footer from "./assets/components/footer";
