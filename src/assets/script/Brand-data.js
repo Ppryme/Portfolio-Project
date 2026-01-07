@@ -1,5 +1,5 @@
 import AmazonImage from '../Images/brands/amazon_gray.png';
-import SonyImage from '../images/brands/sony_gray.png';
+import SonyImage from '../Images/brands/sony_gray.png';
 import AdidasImage from '../images/brands/adidas_gray.png';
 import FilaImage from '../images/brands/fila_gray.png';
 import NBImage from '../images/brands/nb_gray.png';
