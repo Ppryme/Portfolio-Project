@@ -21,7 +21,7 @@ export  const Projectprops = [
   },
   {
     id: 2,
-    title: "Consultancy Agency Landing Page",
+    title: "React Timed Quiz",
     category: "UI/UX",
     image: Consultancypage,
    
