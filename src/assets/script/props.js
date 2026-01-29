@@ -37,7 +37,7 @@ export  const Projectprops = [
   }, 
   {
     id: 4,
-    title: "React Timer Game ",
+    title: "React Timer Quiz ",
     category: "Web Application",
     image: TimerGame,
   
