@@ -2,8 +2,9 @@ import PCCSR from '../Images/pccsr latest.png'
 import Consultancypage from '../Images/consultancy page.png'
 import TimerGame from '../Images/brands/FireShot Capture 002 - Refs & Portals - [localhost].png'
 import mobileApp from '../Images/E-commerce Mobile Application Design for Free (Community).png'
-import foodWeb from '../Images/Restaurant Application.png'
+import quiz from '../Images/quiz.png'
 import mobileproj from '../Images/mobile-project-1.jpg'
+
 
 
 
@@ -23,7 +24,7 @@ export  const Projectprops = [
     id: 2,
     title: "React Timed Quiz",
     category: "UI/UX",
-    image: Consultancypage,
+    image: quiz,
    
   },
   {
