@@ -23,7 +23,7 @@ export  const Projectprops = [
   {
     id: 2,
     title: "React Timed Quiz",
-    category: "UI/UX",
+    category: "Web Application",
     link: "https://react-quiz-app-navy-one.vercel.app/",
     image: quiz,
    
