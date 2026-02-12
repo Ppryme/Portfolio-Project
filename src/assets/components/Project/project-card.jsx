@@ -26,7 +26,7 @@ export default function ProjectCard({ slug, title, category, image, link, darkMo
                 href={link}
                  target="_blank"
                  rel="noopener noreferrer"
-                className={`${darkMode ? "bg-[#1e3851] text-white font-medium" : "bg-indigo-400 text-white font-medium"} cursor-pointer px-3 py-3 rounded-lg shadow-2xl`}
+                className={`${darkMode ? "bg-[#1e3851] text-white font-medium" : "bg-indigo-500 hover:bg-indigo-400 duration-300 focus:bg-purple-500 text-white font-medium"} cursor-pointer px-3 py-3 rounded-lg shadow-2xl`}
               >
                 View Website
               </a>
@@ -34,7 +34,7 @@ export default function ProjectCard({ slug, title, category, image, link, darkMo
               {showExtraButton && (
                 <Link
                   to={`/project/${slug}`}
-                  className={`${darkMode ? "bg-[#1e3851] text-white font-medium" : "bg-indigo-400 text-white font-medium"} px-3 py-3 rounded-lg shadow-2xl`}
+                  className={`${darkMode ? "bg-[#1e3851] text-white font-medium" : "bg-indigo-500 hover:bg-indigo-300 focus:bg-purple-500 duration-400 text-white font-medium"} px-3 py-3 rounded-lg shadow-2xl`}
                 >
                   Client Details
                 </Link>
