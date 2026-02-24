@@ -26,7 +26,7 @@ export default function ProjectCard({ slug, title, category, image, link, darkMo
                 href={link}
                  target="_blank"
                  rel="noopener noreferrer"
-                className={`${darkMode ? "bg-[#1e3851] text-white font-medium" : "bg-indigo-500 hover:bg-indigo-400 duration-300 focus:bg-purple-500 text-white font-medium"} cursor-pointer px-3 py-3 rounded-lg shadow-2xl`}
+                className={`${darkMode ? "bg-[#2563eb] text-white font-medium" : "bg-indigo-500 hover:bg-indigo-400 duration-300 focus:bg-purple-500 text-white font-medium"} cursor-pointer px-3 py-3 rounded-lg shadow-2xl`}
               >
                 View Website
               </a>
