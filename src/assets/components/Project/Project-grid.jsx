@@ -30,6 +30,7 @@ export default function ProjectGrid ({selectedCategory, searchQuery,darkMode}) {
               key={`${project.category}-${index}`}
               {...project}
               showExtraButton = {project.extra}
+              Github = {project.Github}
             />
           ))}
 </div>

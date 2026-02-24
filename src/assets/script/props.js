@@ -26,6 +26,7 @@ export  const Projectprops = [
     category: "Web Application",
     link: "https://react-quiz-app-navy-one.vercel.app/",
     image: quiz,
+    Github: true
    
   },
   {

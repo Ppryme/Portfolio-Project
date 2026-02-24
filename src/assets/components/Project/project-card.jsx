@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-export default function ProjectCard({ slug, title, category, image, link, darkMode, showExtraButton }) {
+export default function ProjectCard({ slug, title, category, image, link, darkMode, showExtraButton, Github }) {
 
   return (
     <div>
@@ -37,6 +37,15 @@ export default function ProjectCard({ slug, title, category, image, link, darkMo
                   className={`${darkMode ? "bg-[#1e3851] text-white font-medium" : "bg-indigo-500 hover:bg-indigo-400 focus:bg-purple-500 duration-400 text-white font-medium"} px-3 py-3 rounded-lg shadow-2xl`}
                 >
                   Client Details
+                </Link>
+              )}
+
+              {Github && (
+                <Link
+                  to={`/project/${slug}`}
+                  className={`${darkMode ? "bg-[#1e3851] text-white font-medium" : "bg-indigo-500 hover:bg-indigo-400 focus:bg-purple-500 duration-400 text-white font-medium"} px-3 py-3 rounded-lg shadow-2xl`}
+                >
+                  View Github
                 </Link>
               )}
             </span>
