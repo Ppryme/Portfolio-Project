@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import hero from  '../Images/developer.svg'
 import DownloadForOfflineOutlinedIcon from '@mui/icons-material/DownloadForOfflineOutlined';
+import cv from '/src/assets/public/Famuyiwa-Peter-FlowCV-Resume-20260216 (2).pdf'
 function Hero () {
 return (
 <section
@@ -34,14 +35,32 @@ return (
       A Full-Stack Developer & Design Enthusiast
     </p>
 
-    <a 
-      href="/src/assets/public/CV.pdf"
-      download="Famuyiwa_Peter_CV.pdf"
-      className="bg-indigo-50 theme-light font-medium hover:text-white px-6 py-3 rounded-md hover:bg-indigo-600 duration-300 shadow-sm border border-gray-200"
-    >
-      <span  className="mr-1.5"><DownloadForOfflineOutlinedIcon/></span>
-      Download CV
-    </a>
+
+  <div className="flex gap-6">
+      
+      <a 
+        href={cv}
+        target="_blank"
+        rel="noopener noreferrer"
+        className=" theme-light font-medium text-indigo-500 hover:text-white px-6 py-3 rounded-md hover:bg-indigo-600 duration-300 shadow-sm  border-indigo-500 border-1"
+
+      >
+        Preview CV
+      </a>
+
+
+    
+      <a 
+        href={cv}
+        download="Famuyiwa_Peter_CV.pdf"
+        className="bg-indigo-50 theme-light font-medium hover:text-white px-6 py-3 rounded-md hover:bg-indigo-600 duration-300 shadow-sm border border-gray-200"
+      >
+        <span  className="mr-1.5"><DownloadForOfflineOutlinedIcon/></span>
+        Download CV
+      </a>
+
+  </div>
+
   </>
 
   </motion.div>

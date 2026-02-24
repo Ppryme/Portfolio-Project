@@ -18,7 +18,7 @@ export default function ProjectCard({ slug, title, category, image, link, darkMo
           <div className="px-4 py-4 flex-grow flex flex-col justify-between">
             <div>
               <h3 className="text-xl font-semibold">{title}</h3>
-              <p className="text-l font-medium">{category}</p>
+              <p className="text-l font-medium text-gray-500">{category}</p>
             </div>
 
             <span className="text-left mt-3 flex flex-row justify-between">
@@ -34,7 +34,7 @@ export default function ProjectCard({ slug, title, category, image, link, darkMo
               {showExtraButton && (
                 <Link
                   to={`/project/${slug}`}
-                  className={`${darkMode ? "bg-[#1e3851] text-white font-medium" : "bg-indigo-500 hover:bg-indigo-300 focus:bg-purple-500 duration-400 text-white font-medium"} px-3 py-3 rounded-lg shadow-2xl`}
+                  className={`${darkMode ? "bg-[#1e3851] text-white font-medium" : "bg-indigo-500 hover:bg-indigo-400 focus:bg-purple-500 duration-400 text-white font-medium"} px-3 py-3 rounded-lg shadow-2xl`}
                 >
                   Client Details
                 </Link>
