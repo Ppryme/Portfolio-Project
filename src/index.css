@@ -1,47 +1,40 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
 html, body, #root {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
-  
-
 }
 
-
-@import "tailwindcss";
 @layer components {
- .nav-link {
-    /* Let parent control the base text color */
-    @apply hover:text-indigo-500 ;
+  .nav-link {
+    @apply hover:text-indigo-500;
   }
 
   .btn {
     @apply transition duration-500 ease-in-out px-6 py-4 rounded-lg bg-indigo-500 text-white hover:bg-indigo-600;
   }
- 
-.text-large{
-  @apply font-bold text-white text-3xl 
+
+  .text-large {
+    @apply font-bold text-white text-3xl;
+  }
 }
-  
 
 @layer base {
-  /* Light Theme (default) */
   .theme-light {
     @apply bg-white text-gray-800;
   }
 
-  .color-red{
-    @apply bg-red-900
-  }
-
-  /* Dark Theme */
   .theme-dark {
     @apply bg-[#0D2438] text-white;
   }
 
-  /* Containers (like sections, cards, navbar, footer) */
   .theme-light .section {
     @apply bg-gray-50 text-gray-800;
   }
+
   .theme-dark .section {
     @apply bg-[#102D44] text-white;
   }
@@ -49,18 +42,16 @@ html, body, #root {
   .theme-light .card {
     @apply bg-white text-gray-800;
   }
+
   .theme-dark .card {
     @apply bg-[#1A374D] text-gray-100;
   }
 
-  .bg-light{
-    @apply bg-[#0a2e54]
+  .bg-light {
+    @apply bg-[#0a2e54];
   }
 
-  
+  .color-red {
+    @apply bg-red-900;
+  }
 }
-
-}
-
-
-

@@ -35,7 +35,7 @@ export  const Projectprops = [
     category: "Mobile Application",
     image: mobileApp,
   
-     extra: true,
+     
       slug: "e-commerce-mobile-application",
   }, 
   {

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { FiChevronUp } from "react-icons/fi";
 
-export default function ScrollToTopButton({darkMode}) {
+export default function ScrollToTopButton() {
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
@@ -48,7 +48,7 @@ export default function ScrollToTopButton({darkMode}) {
         bottom: 30,
         border: "none",
        
-        color: darkMode ? "white" : "black",
+        color:  "black dark:white",
         borderRadius: "50%",
         width: 55,
         height: 55,

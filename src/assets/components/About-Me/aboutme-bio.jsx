@@ -7,20 +7,17 @@ export default function AboutMeBio () {
                 <img className='rounded-lg ' src= {Pic} alt="aboutmebio" />
             </div>
 
-            <div className="flex-1 w-full sm:text-justify  text-center px-4 space-y-3 mx-auto ">
-                <p className=' '>Hi, my name is Famuyiwa Peter — I’m a Full Stack Developer and design enthusiast who loves bringing ideas to life 
-                    through code and creativity. I enjoy working on both the front-end and back-end, turning concepts into functional, visually 
-                    appealing digital experiences. I’m passionate about creating clean, efficient, and user-focused applications that not only work 
-                    seamlessly but also look and feel great.
-                    
-                    
+            <div className="flex-1 w-full sm:text-justify  text-left px-4 space-y-3 mx-auto ">
+                <p className=' '>Hi, I am Famuyiwa Peter. I am a Full Stack Developer and design lover who is passionate about bringing ideas to 
+                    life through code and creativity. I enjoy working on the front-end and back-end, where I get to turn ideas into functional and 
+                    beautiful digital experiences. I am passionate about building clean, efficient, 
+                    and user-centric applications that not only work flawlessly but also look and feel amazing.
                     </p>
 
                     <p className=''>
-                       My love for design drives how I approach development — I pay close attention to detail and always aim for interfaces that are 
-                       intuitive and engaging. I’m constantly exploring new technologies, frameworks, and design trends to stay ahead and improve my 
-                       craft. Whether I’m building scalable web apps or refining a layout, I take pride in blending creativity with technical precision 
-                       to deliver work that truly stands out.
+                      My passion for design influences my development process, as I focus on details and strive to create interfaces that are intuitive and engaging. 
+                      I am always on the lookout for new technologies and design trends that help me stay at the forefront and enhance my skills. Whether I am working on 
+                      web applications or a design layout, I am passionate about blending creativity with technical expertise to create work that is outstanding.
                     </p>
             </div>
         </div>

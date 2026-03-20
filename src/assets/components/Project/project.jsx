@@ -6,7 +6,7 @@ import { motion, AnimatePresence} from "framer-motion";
 
 
 
-function Project ({darkMode}) {
+function Project () {
     const [selectedCategory, setSelectedCategory] = useState("All Projects");
     const [searchQuery, setSearchQuery] = useState(""); 
   return  (
@@ -32,7 +32,7 @@ function Project ({darkMode}) {
                 <div className='flex gap-2'> 
                     <span className=' px-2 py-2 flex-1 sm:block hidden bg-gray-50 rounded-md shadow-xs text-gray-900'><SearchIcon/></span>  
                      <input type="text" placeholder='Search Projects' 
-                     className =  {`${darkMode && "placeholder-white"} placeholder-gray-800 p-2 w-full border max-w-40 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 `}
+                     className =  {`dark:placeholder-white placeholder-gray-800 p-2 w-full border max-w-40 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 `}
                      value={searchQuery}
                      onChange={(e) => setSearchQuery(e.target.value)}
                      />
@@ -42,7 +42,7 @@ function Project ({darkMode}) {
                     <select 
                         value={selectedCategory}
                         onChange={(e) => setSelectedCategory(e.target.value)}
-                         className={`${darkMode ? "dark:bg-[#102D44] border border-gray-200 p-2 rounded-md" :"flex-1 w-full p-2 green  border  border-gray-200  rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500" }` } > All Projects
+                         className={`dark:bg-[#102D44] dark:border dark:border-gray-200   flex-1 w-full p-2 green  border  border-gray-200  rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 ` } > All Projects
                             <option >All Projects</option>
                             <option>Web Application</option>
                             <option>Mobile Application</option>
@@ -55,7 +55,7 @@ function Project ({darkMode}) {
             </div>
 
             <ProjectGrid selectedCategory= {selectedCategory} setSelectedCategory= {setSelectedCategory} 
-            searchQuery= {searchQuery} setSearchQuery = {setSearchQuery} darkMode= {darkMode} />
+            searchQuery= {searchQuery} setSearchQuery = {setSearchQuery}  />
 
             <span className="mx-auto mb-16 mt-4"><Link to= "/project-page" className="btn text-xl font-medium mt-6">More Project</Link></span>
 

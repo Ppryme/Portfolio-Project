@@ -1,4 +1,4 @@
-export default function CounterItem ({title, counter,measurement,darkMode}) {
+export default function CounterItem ({title, counter,measurement}) {
     return (
         
         <div className="mb-20 sm:mb-0">

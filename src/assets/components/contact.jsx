@@ -6,12 +6,23 @@ import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
 import { motion } from "framer-motion";
 import {SendMail} from '../script/contact.mjs'
 import { useRef } from "react";
+import Popup from "./popup";
+import { useMemo } from "react";
 
 
-export default function Contact ({darkMode}){
+export default function Contact (){
   const sendForm = useRef();
+
+   const [popup, setPopup] = useState({
+    show: false,
+    message: "",
+    type: "" // success or error
+  });
     
   const [loading, setLoading] = useState(false)
+
+  
+
 
    const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,25 +31,51 @@ export default function Contact ({darkMode}){
     try {
       await SendMail(e); // execute your SendMail function
       setLoading(false);
-      alert("Message sent successfully ✅");
+        setPopup({
+          show: true,
+          message: "Message sent successfully ✅",
+          type: "success"
+    });
       e.target.reset();
     } catch (error) {
       console.error("Error sending message:", error);
       setLoading(false);
-      alert("Failed to send message ❌");
+
+      setPopup({
+        show: true,
+        message: "Failed to send message ❌",
+        type: "error"
+      });
     }
   };
+
+    
    
 
     return (
         
-<section 
+<motion.section 
   id="contact-container" 
   className=" min-h-screen mx-auto pt-25 px-4 flex flex-col-reverse xl:flex-row gap-28"
+   initial={{ opacity: 0 }}
+			animate={{ opacity: 1, delay: 1 }}
+			transition={{
+				ease: 'easeInOut',
+				duration: 0.6,
+				delay: 0.15,
+			}}
 >
+{popup.show && (
+  <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40">
+    <Popup popup={popup} setPopup={setPopup}/>
+    
+  </div>
+)}
+
+
   <div 
     id="contact-form" 
-    className={`${darkMode ? "bg-[#102D44] text-white" : "bg-white text-gray-800"} p-6 rounded-lg shadow-2xl max-w-[32rem]  max-h-fit flex-1 py-12 `}
+    className={`dark:bg-[#102D44] dark:text-white"  "bg-white text-gray-800"  p-6 rounded-lg shadow-2xl max-w-[32rem]  max-h-fit flex-1 py-12 `}
   >
     <h3 className="text-2xl font-bold mb-4">Contact Form</h3>
 
@@ -56,7 +93,7 @@ export default function Contact ({darkMode}){
                 name="fullname"
                 type="text"
                 required
-                 darkMode= {darkMode}
+                 
                 />
                 
                 
@@ -66,7 +103,7 @@ export default function Contact ({darkMode}){
                 name="email"
                 type="email"
                 required
-                 darkMode= {darkMode}
+                
                  />
                
                 
@@ -77,13 +114,13 @@ export default function Contact ({darkMode}){
               name="Phonenumber"
               type="number"
               required
-              darkMode= {darkMode}
+              
               />
 
             <textarea
               placeholder="Enter message"
               name="message"
-              className={`bg-transparent border-b border-b-dark/30 h-24 text-sm placeholder:text-sm ${darkMode ? "focus:placeholder-white-500": "focus:placeholder-indigo-500"} 
+              className={`bg-transparent border-b border-b-dark/30 h-24 text-sm placeholder:text-sm  dark:focus:placeholder-white-500 focus:placeholder-indigo-500"} 
               focus:border-b-lightblue focus:outline-none text-dark`}
               
              
@@ -141,7 +178,7 @@ export default function Contact ({darkMode}){
 
     <a href="tel:+2348146498950">  <span className="space-x-3 cursor-pointer sm:text-xl text-[16px]"> <LocalPhoneOutlinedIcon/> <span>08146498950</span></span></a>
   </div>
-</section>
+</motion.section>
         
     )
 }

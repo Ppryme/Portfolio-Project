@@ -36,17 +36,17 @@ const Links = [
      },
 ];
 
- export default function SocialLink ({darkMode}) {
+ export default function SocialLink () {
   return  (
        <>
-        <div className={` ${darkMode && "dark"} mt-12  flex flex-wrap items-center justify-center w-full gap-6 `}>
+        <div className={` mt-12  flex flex-wrap items-center justify-center w-full gap-6 `}>
         
           { Links.map ((link) =>  
           <a href={link.url} 
             key={link.id} 
             target='__blank'
-            className={`  ${darkMode && " dark dark:bg-[#163B63]  dark:text-gray-400 dark:hover:text-indigo-200 dark:hover:bg-[#244669] "} bg-gray-50 text-gray-500 hover:text-indigo-500  rounded-lg
-             hover:bg-gray-100 shadow-sm   sm:p-4 p-2 md:p-6  none text-center mb-2 `} >
+            className={`  bg-gray-100 dark:bg-[#163B63]  text-gray-500  dark:text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-200 hover:bg-gray-100 dark:hover:bg-[#244669] rounded-lg
+              shadow-sm sm:p-4 p-2 md:p-6  none text-center mb-2 `} >
                
 				   {<link.icon  />} 
 			    

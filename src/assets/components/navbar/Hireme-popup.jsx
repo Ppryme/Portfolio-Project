@@ -5,10 +5,17 @@ import FloatingInputb from "../FloatingInputb";
 import { createPortal } from "react-dom";
 import {SendMail} from '../../script/Hireme-contact.mjs'
 import { useRef } from "react";
+import Popup from "../popup";
 
 
-export default function HiremePopup({ hireMePopup, setIsHireMePopup, darkMode }) {
+export default function HiremePopup({ hireMePopup, setIsHireMePopup }) {
   const sendForm = useRef()
+
+    const [popup, setPopup] = useState({
+    show: false,
+    message: "",
+    type: "" // success or error
+  });
 
   const [loading, setLoading] = useState(false)
   
@@ -19,12 +26,22 @@ export default function HiremePopup({ hireMePopup, setIsHireMePopup, darkMode })
       try {
         await SendMail(e); // execute your SendMail function
         setLoading(false);
-        alert("Message sent successfully ✅");
+
+        setPopup({
+          show: true,
+          message: "Message sent successfully ✅",
+          type: "success"
+    });
         e.target.reset();
       } catch (error) {
         console.error("Error sending message:", error);
         setLoading(false);
-        alert("Failed to send message ❌");
+
+        setPopup({
+        show: true,
+        message: "Failed to send message ❌",
+        type: "error"
+      });
       }
     };
   const portalTarget = document.getElementById("pop-up");
@@ -36,15 +53,7 @@ export default function HiremePopup({ hireMePopup, setIsHireMePopup, darkMode })
     <AnimatePresence>
       {hireMePopup && (
         <>
-          {/* Backdrop */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.5 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-black z-2 h-full"
-            onClick={() => setIsHireMePopup(false)} // close on backdrop click
-          />
+        
 
           {/* Popup */}
           <motion.div
@@ -52,40 +61,45 @@ export default function HiremePopup({ hireMePopup, setIsHireMePopup, darkMode })
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
-            className={`h-svh sm:max-w-120 max-w-70 fixed left-0 right-0 top-2 flex flex-col gap-6 mx-auto text-gray-800 shadow-lg z-3 rounded-t-xl 
-            ${darkMode ? "dark dark:bg-[#102D44] text-white" : "bg-white text-gray-800"}`}
+           className="fixed bottom-0 left-0 right-0 
+                      mx-auto w-full sm:max-w-md
+                      max-h-[100vh] overflow-y-auto
+                      rounded-t-2xl shadow-lg
+                      bg-white dark:bg-[#102D44]
+                      text-gray-800 dark:text-white
+                      flex flex-col gap-6 z-50 pb-4"
           >
             <div className="flex text-left pt-8 pl-4 pr-4 items-center gap-4 justify-between ">
+
+              {popup.show && <div className="absolute  z-50"><Popup popup={popup} setPopup={setPopup}/></div>}
               <p
-                className={`${
-                  darkMode ? "text-white" : "text-gray-800"
-                } font-medium sm:text-lg text-[16px]`}
+                className={`dark:text-white text-gray-800
+                 font-medium sm:text-lg text-[16px]`}
               >
                 What Project Are you Looking for?
               </p>
               <span>
-                <button onClick={() => setIsHireMePopup(false)}>
+                <button onClick={() => {setIsHireMePopup(false); setPopup({ ...popup, show: false })}} className="text-gray-800 dark:text-white">
                   <CloseIcon />
                 </button>
               </span>
             </div>
 
                 <form action="submit" ref={sendForm} onSubmit={handleSubmit} className="w-full">
-            <div id="contact-inputs" className="flex flex-col gap-8 pt-4 px-4 items-start">
+            <div id="contact-inputs" className="flex flex-col gap-12 pt-4 px-4 items-start">
                 
-              <FloatingInputb label="Full name"  name="Fullname" type="text" darkMode={darkMode} required />
+              <FloatingInputb label="Full name"  name="Fullname" type="text" required />
 
               
-              <FloatingInputb label="Email Address" name="email" type="email" darkMode={darkMode} required />
+              <FloatingInputb label="Email Address" name="email" type="email" required />
 
               <select
                 className={`w-full text-[14px] py-2 border border-gray-300 
                 
-                ${
-                  darkMode
-                    ? "text-white bg-[#102D44] focus:outline-none border border-t-0 border-x-0 rounded-none"
-                    : "text-gray-800 focus:outline-none"
-                } rounded-none border border-t-0 border-x-0 focus:border-b-indigo-500`}
+                
+                    dark:text-white dark:bg-[#102D44] dark:focus:outline-none dark:border dark:border-t-0 dark:border-x-0 dark:rounded-none
+                    text-gray-800 focus:outline-none
+                 rounded-none  border-t-0 border-x-0 focus:border-b-indigo-500`}
 
                 name="service"
                 required
@@ -100,9 +114,9 @@ export default function HiremePopup({ hireMePopup, setIsHireMePopup, darkMode })
                 placeholder="Enter message"
                 name="message"
                 className={`bg-transparent border-b border-b-dark/30 h-24 text-sm placeholder:text-sm 
-                  ${darkMode ? "focus:placeholder-white-500" : "focus:placeholder-indigo-500"} 
+                  dark:focus:placeholder-white-500  focus:placeholder-indigo-500 
                   focus:border-b-lightblue focus:outline-none text-dark w-full`}
-                darkMode={darkMode}
+               
                 required
               ></textarea>
               <span>
@@ -138,14 +152,7 @@ export default function HiremePopup({ hireMePopup, setIsHireMePopup, darkMode })
             </form>
 
 
-            <span>
-              <button
-                onClick={() => setIsHireMePopup(false)}
-                className="absolute right-2 block font-sans text-bold shadow-sm cursor-pointer text-white py-3 px-4 rounded-md"
-              >
-                Close
-              </button>
-            </span>
+              
           </motion.div>
         </>
       )}

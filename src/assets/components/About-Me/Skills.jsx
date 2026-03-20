@@ -1,7 +1,7 @@
 import { mySkills } from "../../script/skills-data"
 
 
-export default function Skills ({darkMode}) {
+export default function Skills () {
     
   return  <section id="skills-section" className="max-w-6xl my-14">
         <div id="title" className="my-24 space-y-3">
@@ -11,7 +11,7 @@ export default function Skills ({darkMode}) {
 
         <div id="Skills-Container" className="grid grid-cols-2  md:grid-cols-3 lg:grid-cols-4  gap-6 px-2 ">
              { mySkills.map((skill) => 
-         <div key={skill.id} className={` ${darkMode ? "bg-[#1e3851]" : "bg-white border-gray-200 border-1 "}  flex flex-col text-center items-center shadow-lg p-4 space-y-2 hover:scale-110 transition-transform duration-300    `}>    
+         <div key={skill.id} className={` dark:bg-[#1e3851]  bg-white border-gray-200 dark:border-none border-1   flex flex-col text-center items-center shadow-lg p-4 space-y-2 hover:scale-110 transition-transform duration-300    `}>    
            <span> <img className=" h-10 w-10 mb-3" src={skill.techPhoto} alt={skill.desc} /> </span>
             <p className="font-medium text-xl">{skill.tech}</p>
             <p className="text-gray-500 font-medium">{skill.desc}</p>

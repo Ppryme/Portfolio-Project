@@ -35,17 +35,19 @@ return (
       A Full-Stack Developer & Design Enthusiast
     </p>
 
+   
 
-  <div className="flex gap-6">
+
+  <div className="flex gap-6 items-center">
       
       <a 
         href={cv}
         target="_blank"
         rel="noopener noreferrer"
-        className=" theme-light font-medium text-indigo-500 hover:text-white px-6 py-3 rounded-md hover:bg-indigo-600 duration-300 shadow-sm  border-indigo-500 border-1"
+        className="flex items-center  sm:text-l text-sm font-medium bg-indigo-500 text-white dark:text-white dark:bg-[#163b63] dark:border-none hover:text-white px-6 py-3 rounded-md hover:bg-indigo-600 dark:hover:bg-[#0f3354] duration-300 shadow-sm border  border-indigo-500 "
 
       >
-        Preview CV
+       <span>Preview CV</span> 
       </a>
 
 
@@ -53,10 +55,10 @@ return (
       <a 
         href={cv}
         download="Famuyiwa_Peter_CV.pdf"
-        className="bg-indigo-50 theme-light font-medium hover:text-white px-6 py-3 rounded-md hover:bg-indigo-600 duration-300 shadow-sm border border-gray-200"
+        className="flex items-center   sm:text-l text-sm bg-white/1 dark:text-white font-medium hover:text-white px-6 py-3 rounded-md hover:bg-indigo-600 duration-300 shadow-sm border border-gray-200"
       >
-        <span  className="mr-1.5"><DownloadForOfflineOutlinedIcon/></span>
-        Download CV
+        <span className="text-center" ><DownloadForOfflineOutlinedIcon fontSize="small"/> Download CV</span>
+        
       </a>
 
   </div>

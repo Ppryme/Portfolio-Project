@@ -1,14 +1,23 @@
 
 import FloatingInputb from "../components/FloatingInputb"
+import { motion } from "framer-motion"
 export default function ContactPage () {
     return(
-<section 
+<motion.section 
   id="contact-container" 
   className=" min-h-screen mx-auto mt-8 px-4"
+   initial={{ opacity: 0 }}
+			animate={{ opacity: 1, delay: 1 }}
+			transition={{
+				ease: 'easeInOut',
+				duration: 0.6,
+				delay: 0.15,
+			}}
+  
 >
   <div 
     id="contact-form" 
-    className={`${darkMode ? "bg-[#0a2e54] text-white" : "bg-white text-gray-800"} p-6 rounded-lg shadow-md max-w-[34rem] min-h-svh`}
+    className={`dark:bg-[#0a2e54] dark:text-white  bg-white text-gray-800 p-6 rounded-lg shadow-md max-w-[34rem] min-h-svh`}
   >
     <h3 className="text-xl font-bold mb-4">Contact Form</h3>
 
@@ -57,9 +66,7 @@ export default function ContactPage () {
           </form>
   </div>
 
-  <div id="contact-details">
 
-  </div>
-</section>
+</motion.section>
     )
 }

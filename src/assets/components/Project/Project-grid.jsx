@@ -26,7 +26,7 @@ export default function ProjectGrid ({selectedCategory, searchQuery,darkMode}) {
             return matchesCategory && matchesSearch;
           })
           .map((project, index) => (
-            <ProjectCard id={project.id} darkMode={darkMode}  slug={project.slug}
+            <ProjectCard id={project.id}   slug={project.slug}
               key={`${project.category}-${index}`}
               {...project}
               showExtraButton = {project.extra}

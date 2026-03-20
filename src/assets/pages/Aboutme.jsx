@@ -3,7 +3,7 @@ import AboutCounter from "../components/About-Me/AboutmeCounter"
 import Brands from "../components/About-Me/Brands-container"
 import Skills from "../components/About-Me/Skills"
 import { motion } from "framer-motion"
-export default function Aboutme ({darkMode}) {
+export default function Aboutme () {
     return (
         <motion.section 
             className="max-w-6xl py-28 "
@@ -17,9 +17,9 @@ export default function Aboutme ({darkMode}) {
             >
             <AboutMeBio/>
 
-            <Skills darkMode = {darkMode}/>
+            <Skills />
 
-            <AboutCounter darkMode={darkMode}/>
+            <AboutCounter />
 
             <Brands/>
 

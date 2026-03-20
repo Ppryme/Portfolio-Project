@@ -80,7 +80,7 @@ export default function ProjectInfo({ singleProjectData, darkMode }) {
 										href={social.url}
 										target="__blank"
 										aria-label="Share Project"
-										className={` ${ darkMode ? "hover:text-white text-gray-400" : "text-gray-400 hover:text-gray-800"} bg-ternary-light dark:bg-ternary-dark   p-2 rounded-lg shadow-sm duration-500`}
+										className={` dark:hover:text-white dark:text-gray-400 text-gray-400 hover:text-gray-800 p-2 rounded-lg shadow-sm duration-500`}
 									>
 										<span className="text-lg lg:text-2xl">
 											{social.icon}
